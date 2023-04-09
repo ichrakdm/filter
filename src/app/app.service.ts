@@ -11,7 +11,7 @@ export class Employee {
 
   FirstName: string | undefined;
 
-  BirthYear!: number;
+  BirthYear!: Date;
 
   City: string | undefined;
 
@@ -20,31 +20,31 @@ export class Employee {
 
 const employees: Employee[] = [
   {
-    LastName: 'Davolio', FirstName: 'Nancy', BirthYear:1950, City: 'Seattle', Title: 'Sales Representative',
+    LastName: 'Davolio', FirstName: 'Nancy', BirthYear:new Date(2022,2,16), City: 'Seattle', Title: 'Sales Representative',
   },
   {
-    LastName: 'Fuller', FirstName: 'Andrew', BirthYear: 1952, City: 'Tacoma', Title: 'Vice President, Sales',
+    LastName: 'Fuller', FirstName: 'Andrew', BirthYear:new Date(2022,4,5), City: 'Tacoma', Title: 'Vice President, Sales',
   },
   {
-    LastName: 'Leverling', FirstName: 'Janet', BirthYear: 1963, City: 'Kirkland', Title: 'Sales Representative',
+    LastName: 'Leverling', FirstName: 'Janet', BirthYear:new Date(2022,4,20), City: 'Kirkland', Title: 'Sales Representative',
   },
   {
-    LastName: 'Peacock', FirstName: 'Margaret', BirthYear: 1937, City: 'Redmond', Title: 'Sales Representative',
+    LastName: 'Peacock', FirstName: 'Margaret', BirthYear:new Date(2023,2,19), City: 'Redmond', Title: 'Sales Representative',
   },
   {
-    LastName: 'Buchanan', FirstName: 'Steven', BirthYear: 1955, City: 'London', Title: 'Sales Manager',
+    LastName: 'Buchanan', FirstName: 'Steven', BirthYear:new Date(2023,4,15), City: 'London', Title: 'Sales Manager',
   },
   {
-    LastName: 'Suyama', FirstName: 'Michael', BirthYear: 1963, City: 'London', Title: 'Sales Representative',
+    LastName: 'Suyama', FirstName: 'Michael', BirthYear:new Date(2022,12,9), City: 'London', Title: 'Sales Representative',
   },
   {
-    LastName: 'King', FirstName: 'Robert', BirthYear: 1960, City: 'London', Title: 'Sales Representative',
+    LastName: 'King', FirstName: 'Robert', BirthYear:new Date(2022,7,25), City: 'London', Title: 'Sales Representative',
   },
   {
-    LastName: 'Callahan', FirstName: 'Laura', BirthYear: 1958, City: 'Seattle', Title: 'Inside Sales Coordinator',
+    LastName: 'Callahan', FirstName: 'Laura', BirthYear:new Date(2023,4,6), City: 'Seattle', Title: 'Inside Sales Coordinator',
   },
   {
-    LastName: 'Dodsworth', FirstName: 'Anne', BirthYear: 1966, City: 'London', Title: 'Sales Representative',
+    LastName: 'Dodsworth', FirstName: 'Anne', BirthYear:new Date(2022,3,10), City: 'London', Title: 'Sales Representative',
   },
 ];
 const navigation: List[] = [

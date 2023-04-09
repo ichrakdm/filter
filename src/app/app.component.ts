@@ -74,7 +74,7 @@ export class AppComponent {
     this.navigation = service.getNavigationList();
   }
 
-  onValueChanged(e: { value: number[]; }) {
+  onValueChanged(e: { value: Date[]; }) {
     const selectedEmployees: any[] = [];
 
     this.employees.forEach((item, index) => {

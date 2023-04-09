@@ -56,12 +56,17 @@
   </div>
 </div>
 
+
+<!-- date scale filter  -->
+
 <div id="range-selector-demo">
 <dx-range-selector
   id="range-selector"
   [value]="[selectedStartValue, selectedEndValue]"
-  title="Select a Vacation Period">
-
+  title="Select a Vacation Period"
+  [dataSource]="employees"
+  dataSourceField="BirthYear"
+  (onValueChanged)="onValueChanged($event)">
 
 
   <dxo-margin [top]="50">
@@ -78,6 +83,7 @@
     <dxo-minor-tick [visible]="false"></dxo-minor-tick>
   </dxo-scale>
   <dxo-slider-marker format="monthAndDay"></dxo-slider-marker>
+  <dxo-behavior callValueChanged="onMoving"></dxo-behavior>
 </dx-range-selector>
 
 <p>Value: {{startValue}}</p>
