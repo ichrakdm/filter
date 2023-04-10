@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { SamplefilterComponent } from './samplefilter/samplefilter.component';
+import { DatePipe } from '@angular/common';
 
 //template  https://js.devexpress.com/Demos/WidgetsGallery/Demo/RangeSelector/DateTimeScaleLightweight/Angular/Light/
 //install these packages
@@ -36,7 +37,7 @@ import {
     DxToolbarModule
     
   ],
-  providers: [Service],
+  providers: [Service, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
