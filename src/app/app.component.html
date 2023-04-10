@@ -58,12 +58,13 @@
 
 
 <!-- date scale filter  -->
-
+<!-- inside range selector : title="Select a Vacation Period" -->
 <div id="range-selector-demo">
+  <p>From: {{start}} To: {{end}}</p>
 <dx-range-selector
   id="range-selector"
   [value]="[selectedStartValue, selectedEndValue]"
-  title="Select a Vacation Period"
+  
   [dataSource]="employees"
   dataSourceField="BirthYear"
   (onValueChanged)="onValueChanged($event)">
@@ -86,8 +87,7 @@
   <dxo-behavior callValueChanged="onMoving"></dxo-behavior>
 </dx-range-selector>
 
-<p>Value: {{start}}</p>
-<p>Value: {{end}}</p>
+
 
 <!-- table -->
 <h2>Selected Employees</h2>
