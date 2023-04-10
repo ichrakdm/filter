@@ -7,6 +7,7 @@ import {
   DxDrawerComponent, DxDrawerModule, DxListModule, DxRadioGroupModule, DxToolbarModule,
 } from 'devextreme-angular';
 import { List } from './app.service2';
+import { DatePipe } from '@angular/common';
 if (!/localhost/.test(document.location.host)) {
   enableProdMode();
 }
@@ -55,6 +56,9 @@ export class AppComponent {
 
   endValue: Date = new Date();
 
+  start:any = this.datePipe.transform(this.startValue, "yyyy-MM-dd");
+  end:any = this.datePipe.transform(this.endValue, "yyyy-MM-dd");
+
   selectedStartValue: Date = new Date(2021, 12, 31);
 
   selectedEndValue: Date = new Date(2022, 2, 1);
@@ -66,7 +70,7 @@ export class AppComponent {
   tableTitles: string[] = ['First Name', 'Last Name', 'Birth Year', 'City', 'Title'];
 
 
-  constructor(service: Service) {
+  constructor(service: Service,  private datePipe: DatePipe) {
     this.employees = service.getEmployees();
     this.selectedEmployees = this.employees;
 
@@ -76,7 +80,8 @@ export class AppComponent {
 
   onValueChanged(e: { value: Date[]; }) {
     const selectedEmployees: any[] = [];
-
+   this.start = this.datePipe.transform(e.value[0], "yyyy-MM-dd") ;
+    this.end = this.datePipe.transform(e.value[1], "yyyy-MM-dd");
     this.employees.forEach((item, index) => {
       if (item.BirthYear >= e.value[0] && item.BirthYear <= e.value[1]) {
         selectedEmployees.push(item);
