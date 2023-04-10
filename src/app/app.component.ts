@@ -3,9 +3,6 @@
 //npx -p devextreme-cli devextreme add devextreme-angular
 import { Component ,enableProdMode,ViewChild } from '@angular/core';
 import { Employee, Service } from './app.service';
-import {
-  DxDrawerComponent, DxDrawerModule, DxListModule, DxRadioGroupModule, DxToolbarModule,
-} from 'devextreme-angular';
 import { List } from './app.service2';
 import { DatePipe } from '@angular/common';
 if (!/localhost/.test(document.location.host)) {
@@ -18,38 +15,13 @@ if (!/localhost/.test(document.location.host)) {
   preserveWhitespaces: true,
 })
 export class AppComponent {
-  //navbar
-  @ViewChild(DxDrawerComponent, { static: false })
-  drawer!: DxDrawerComponent;
-
+ 
   navigation: List[];
 
-  showSubmenuModes: string[] = ['slide', 'expand'];
-
-  positionModes: string[] = ['left', 'right'];
-
-  showModes: string[] = ['push', 'shrink', 'overlap'];
 
   text: string;
 
-  selectedOpenMode = 'shrink';
-
-  selectedPosition = 'left';
-
-  selectedRevealMode = 'slide';
-
-  isDrawerOpen = true;
-
-  elementAttr: any;
-
-  toolbarContent = [{
-    widget: 'dxButton',
-    location: 'before',
-    options: {
-      icon: 'menu',
-      onClick: () => this.isDrawerOpen = !this.isDrawerOpen,
-    },
-  }];
+  
   //filter
   title = 'filter';
   startValue: Date = new Date(2021, 12, 31);
